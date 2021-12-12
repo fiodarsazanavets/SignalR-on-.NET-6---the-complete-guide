@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row" style="padding-top: 50px;">
+    <div class="col-md-4">
+        <div class="control-group">
+            <div>
+                <label for="broadcast">Message</label>
+                <input type="text" id="broadcast" name="broadcast" />
+            </div>
+            <button id="btn-broadcast">Broadcast</button>
+        </div>
+    </div>
+
+    <div class="col-md-7">
+        <p>SignalR Messages:</p>
+        <pre id="signalr-message-panel"></pre>
+    </div>
+</div>
