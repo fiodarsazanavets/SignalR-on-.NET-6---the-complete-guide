@@ -13,6 +13,7 @@ namespace SignalRServer.Hubs
         {
             await Clients.Others.ReceiveMessage(message);
         }
+
         public override async Task OnConnectedAsync()
         {
             await base.OnConnectedAsync();
