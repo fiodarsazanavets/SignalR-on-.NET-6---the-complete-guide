@@ -21,7 +21,7 @@ dependencies {
     // This dependency is used by the application.
     implementation("com.google.guava:guava:30.1.1-jre")
 	
-	implementation("com.microsoft.signalr:signalr:6.0.0-preview.7.21378.6")
+	implementation("com.microsoft.signalr:signalr:6.0.0")
 }
 
 application {

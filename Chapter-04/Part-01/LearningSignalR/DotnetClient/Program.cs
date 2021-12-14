@@ -13,11 +13,9 @@ hubConnection.On<string>("ReceiveMessage",
 
 try
 {
-    hubConnection.StartAsync().Wait();
+    await hubConnection.StartAsync();
 
-    var running = true;
-
-    while (running)
+    while (true)
     {
         var message = string.Empty;
 
@@ -30,7 +28,10 @@ try
         Console.WriteLine("Please specify the message:");
         message = Console.ReadLine();
 
-        hubConnection.SendAsync("BroadcastMessage", message).Wait();
+        if (action == "exit")
+            break;
+
+        await hubConnection.SendAsync("BroadcastMessage", message);
     }
 }
 catch (Exception ex)
