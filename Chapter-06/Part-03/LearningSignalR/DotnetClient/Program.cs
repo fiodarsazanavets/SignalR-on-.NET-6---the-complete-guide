@@ -36,7 +36,7 @@ try
 
         var action = Console.ReadLine();
 
-        if (action != "5" && action != "6")
+        if (action != "5" && action != "6" && action != "7")
         {
             Console.WriteLine("Please specify the message:");
             message = Console.ReadLine();
