@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http.Connections;
 using SignalRServer.Hubs;
 using System.Text.Json.Serialization;
 
@@ -61,7 +62,21 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.MapHub<LearningHub>("/learningHub");
+app.MapHub<LearningHub>("/learningHub", options =>
+{
+    options.Transports =
+                HttpTransportType.WebSockets | 
+                HttpTransportType.LongPolling;
+    options.CloseOnAuthenticationExpiration = true;
+    options.ApplicationMaxBufferSize = 65_536;
+    options.TransportMaxBufferSize = 65_536;
+    options.MinimumProtocolVersion = 0;
+    options.TransportSendTimeout = TimeSpan.FromSeconds(10);
+    options.WebSockets.CloseTimeout = TimeSpan.FromSeconds(3);
+    options.LongPolling.PollTimeout = TimeSpan.FromSeconds(10);
+
+    Console.WriteLine($"Authorization data items: {options.AuthorizationData.Count}");
+});
 app.UseBlazorFrameworkFiles();
 
 app.Run();
