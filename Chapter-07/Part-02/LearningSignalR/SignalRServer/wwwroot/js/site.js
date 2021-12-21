@@ -1,5 +1,13 @@
 ﻿const connection = new signalR.HubConnectionBuilder()
-    .withUrl("/learningHub", { transport: signalR.HttpTransportType.WebSockets | signalR.HttpTransportType.LongPolling })
+    .withUrl("/learningHub", {
+        transport: signalR.HttpTransportType.WebSockets | signalR.HttpTransportType.LongPolling,
+        headers: { "Key": "value" },
+        accessTokenFactory: null,
+        logMessageContent: true,
+        skipNegotiation: false,
+        withCredentials: true,
+        timeout: 100000
+    })
     .configureLogging(signalR.LogLevel.Information)
     .build();
 
