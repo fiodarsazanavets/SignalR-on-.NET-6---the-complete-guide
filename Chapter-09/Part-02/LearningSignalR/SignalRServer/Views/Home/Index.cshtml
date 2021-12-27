@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row" style="padding-top: 50px;">
+    <div class="col-md-4">
+        <div class="control-group">
+            <div>
+                <label for="broadcast">Message</label>
+                <input type="text" id="broadcast" name="broadcast" />
+            </div>
+            <button id="btn-broadcast">Broadcast</button>
+        </div>
+        <div class="control-group">
+            <div>
+                <label for="others-message">Message</label>
+                <input type="text" id="others-message" name="others-message" />
+            </div>
+            <button id="btn-others-message">Send to Others</button>
+        </div>
+        <div class="control-group">
+            <div>
+                <label for="self-message">Message</label>
+                <input type="text" id="self-message" name="self-message" />
+            </div>
+            <button id="btn-self-message">Send to Self</button>
+        </div>
+        <div class="control-group">
+            <div>
+                <label for="individual-message">Message</label>
+                <input type="text" id="individual-message" name="individual-message" />
+            </div>
+            <div>
+                <label for="connection-for-message">User connection id:</label>
+                <input type="text" id="connection-for-message" name="connection-for-message" />
+            </div>
+            <button id="btn-individual-message">Send to Specific User</button>
+        </div>
+        <div class="control-group">
+            <div>
+                <label for="group-message">Message</label>
+                <input type="text" id="group-message" name="group-message" />
+            </div>
+            <div>
+                <label for="group-for-message">Group Name</label>
+                <input type="text" id="group-for-message" name="group-for-message" />
+            </div>
+            <button id="btn-group-message">Send to Group</button>
+        </div>
+        <div class="control-group">
+            <div>
+                <label for="group-to-add">Group Name</label>
+                <input type="text" id="group-to-add" name="group-to-add" />
+            </div>
+            <button id="btn-group-add">Add User to Group</button>
+        </div>
+        <div class="control-group">
+            <div>
+                <label for="group-to-remove">Group Name</label>
+                <input type="text" id="group-to-remove" name="group-to-remove" />
+            </div>
+            <button id="btn-group-remove">Remove User from Group</button>
+        </div>
+        <div class="control-group">
+            <div>
+                <label for="number-of-jobs">Number of Jobs</label>
+                <input type="text" id="number-of-jobs" name="number-of-jobs" />
+            </div>
+            <button id="btn-trigger-stream">Trigger Server Stream</button>
+        </div>
+    </div>
+
+    <div class="col-md-7">
+        <p>SignalR Messages:</p>
+        <pre id="signalr-message-panel"></pre>
+    </div>
+</div>
