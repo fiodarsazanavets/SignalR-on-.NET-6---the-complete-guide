@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSignalR().AddStackExchangeRedis("localhost: 6380");
+builder.Services.AddSignalR().AddStackExchangeRedis("localhost:6379");
 
 var app = builder.Build();
 
