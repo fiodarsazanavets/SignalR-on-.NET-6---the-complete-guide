@@ -33,7 +33,7 @@ namespace SignalRServer2.Controllers
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             request.Content = new StringContent(JsonConvert.SerializeObject(payloadMessage), Encoding.UTF8, "application/json");
 
-            HttpResponseMessage response = await client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
+            var response = await client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
 
             if (!response.IsSuccessStatusCode)
                 throw new Exception("Failure sending SignalR message.");
