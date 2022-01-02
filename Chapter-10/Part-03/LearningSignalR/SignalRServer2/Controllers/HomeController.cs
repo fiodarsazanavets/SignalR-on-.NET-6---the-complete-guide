@@ -31,6 +31,7 @@ namespace SignalRServer2.Controllers
 
             var request = new HttpRequestMessage(HttpMethod.Post, new UriBuilder(signalRHubUrl).Uri);
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            request.Headers.Add("Authorization", "Bearer <your JWT>");
             request.Content = new StringContent(JsonConvert.SerializeObject(payloadMessage), Encoding.UTF8, "application/json");
 
             var response = await client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
