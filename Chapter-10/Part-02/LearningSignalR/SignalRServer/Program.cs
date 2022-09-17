@@ -109,9 +109,9 @@ var serviceManager = new ServiceManagerBuilder()
                     })
                     .BuildServiceManager();
 
-var hubContext = await serviceManager.CreateHubContextAsync<LearningHub>("LearningHub", CancellationToken.None);
+var hubContext = await serviceManager.CreateHubContextAsync("LearningHub", CancellationToken.None);
 
-builder.Services.Add(new ServiceDescriptor(typeof(IHubContext<LearningHub>), hubContext));
+builder.Services.Add(new ServiceDescriptor(typeof(IHubContext<Hub>), hubContext));
 
 var app = builder.Build();
 

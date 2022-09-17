@@ -12,9 +12,9 @@ namespace SignalRServer.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        private readonly IHubContext<LearningHub> hubContext;
+        private readonly IHubContext<Hub> hubContext;
 
-        public HomeController(IHubContext<LearningHub> hubContext)
+        public HomeController(IHubContext<Hub> hubContext)
         {
             this.hubContext = hubContext;
         }
